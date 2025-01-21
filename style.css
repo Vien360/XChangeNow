@@ -1,0 +1,285 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 75px 20px 20px; /* Ajusta el padding superior para compensar la altura de la navbar */
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: -9999;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input, select, button {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #007bff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #007bff;
+  color: white;
+  width: 100%; /* Asegura que ocupe todo el ancho de la página */
+  position: fixed; /* Fija la barra en la parte superior */
+  top: 0; /* La coloca en la parte superior */
+  left: 0; /* La alinea al lado izquierdo */
+  z-index: 9999; /* Mantiene la barra encima de otros elementos */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: agrega una sombra para distinguirla */
+}
+
+/* Estilo para el logo */
+.navbar .logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Estilos de los enlaces en pantallas grandes (PC) */
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para los enlaces de la barra de navegación */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  position: relative; /* Necesario para el efecto de subrayado */
+  transition: all 0.3s ease; /* Transición suave para los efectos */
+}
+
+/* Efecto hover mejorado */
+.nav-links a:hover {
+  background-color: #0056b3; /* Cambiar el color de fondo al hacer hover */
+  color: #fff; /* Asegurarnos de que el texto sigue siendo blanco */
+  opacity: 0.8; /* Opacidad para un toque visual suave */
+  text-decoration: none; /* Mantener sin subrayado */
+}
+
+/* Efecto de subrayado animado */
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff; /* Subrayado blanco */
+  transition: width 0.3s ease; /* Efecto de animación en el subrayado */
+}
+
+.nav-links a:hover::before {
+  width: 100%; /* El subrayado aparece al hacer hover */
+}
+
+
+/* Estilos para el botón burger en pantallas pequeñas */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Animación para el burger cuando está activo */
+.burger.toggle .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.toggle .line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.toggle .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Estilos para el menú en pantallas pequeñas */
+.nav-links {
+  display: none; /* Ocultar el menú por defecto */
+  position: absolute;
+  top: 60px; /* Ajustar según el tamaño de tu barra de navegación */
+  right: 0;
+  width: 100%;
+  background-color: #0171e9; /* Color de fondo */
+  text-align: center;
+  z-index: 0;
+}
+
+.nav-links.active {
+  display: flex; /* Mostrar el menú cuando el burger es activado */
+}
+
+.nav-links a {
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  background-color: #0056b3; /* Color de fondo al hacer hover */
+}
+
+/* Estilos para pantallas grandes (PC) */
+@media (min-width: 769px) {
+  .navbar .nav-links {
+    display: flex; /* Mostrar los enlaces en fila */
+    justify-content: space-around;
+    width: auto;
+    position: static;
+    top: auto;
+    right: auto;
+  }
+
+  .burger {
+    display: none; /* Ocultar el botón burger en pantallas grandes */
+  }
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .burger {
+    display: block; /* Mostrar el botón burger */
+  }
+
+  .nav-links {
+    gap: 5px;
+    display: none; /* Ocultar el menú por defecto en pantallas pequeñas */
+  }
+
+  .nav-links.active {
+    flex-direction: column;
+    position: absolute;
+    top: 85px; /* Ajustar según la altura de tu navbar */
+    right: 35px;
+    width: 90%;
+    margin-right: 15px;
+    background: #0171e9;
+    text-align: center;
+    z-index: 0;
+  }
+
+  .nav-links a {
+    padding: 8px 10px; /* Reducimos el padding */
+    margin: 5px 0; /* Añadimos margen para separar visualmente los enlaces */
+    font-size: 16px; /* Reducimos el tamaño del texto si es necesario */
+    line-height: 1.2; /* Ajustamos la altura de línea */
+  }
+}
+
+
+/* Icono de dinero */
+.MoneyIcon {
+  width: 50px;
+  height: 50px;
+}
+
+/* Estilo para las banderas */
+#flag-from, #flag-to {
+  width: 30px; /* Ajustamos el tamaño de las banderas */
+  height: auto;
+  margin-left: 10px;
+  vertical-align: middle; /* Alineamos verticalmente con el texto */
+}
+
+/* Alineación de los select y las banderas en el formulario */
+#amount {
+  text-align: right;
+}
+
+/* Para alinear el select con la bandera */
+select {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+}
+
+#language-selector {
+  position: fixed;
+  top: 105px; /* Distancia desde la parte superior */
+  right: 10px; /* Distancia desde la parte derecha */
+  background-color: white; /* Fondo para que se vea bien sobre cualquier contenido */
+  padding: 5px 10px; /* Un poco de padding para que se vea mejor */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  border-radius: 5px; /* Bordes redondeados si lo deseas */
+}
+@media (max-width: 768px) {
+  .selector-idioma {
+    top: 5px; /* Menor distancia desde la parte superior en pantallas pequeñas */
+    right: 5px; /* Menor distancia desde la parte derecha */
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+    padding: 3px 8px; /* Reducir padding */
+  }
+}
+/* En dispositivos móviles, cambiamos el select a un botón */
+@media (max-width: 480px) {
+  .selector-idioma select {
+    display: none; /* Ocultamos el select */
+  }
+  
+  .selector-idioma::after {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #0171e9;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+}
+

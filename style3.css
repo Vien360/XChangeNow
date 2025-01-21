@@ -1,0 +1,246 @@
+html, body {
+  height: 100%; /* Asegura que html y body ocupen toda la altura */
+  margin: 0; /* Elimina márgenes por defecto */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Usamos flexbox para organizar los elementos */
+  flex-direction: column; /* Apilar los elementos de arriba hacia abajo */
+  height: 100%; /* Ocupa toda la altura disponible */
+}
+  .container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #007bff;
+  color: white;
+  z-index: 9999;
+}
+
+/* Estilo para el logo */
+.navbar .logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Estilos de los enlaces en pantallas grandes (PC) */
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para los enlaces de la barra de navegación */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  position: relative; /* Necesario para el efecto de subrayado */
+  transition: all 0.3s ease; /* Transición suave para los efectos */
+}
+
+/* Efecto hover mejorado */
+.nav-links a:hover {
+  background-color: #0056b3; /* Cambiar el color de fondo al hacer hover */
+  color: #fff; /* Asegurarnos de que el texto sigue siendo blanco */
+  opacity: 0.8; /* Opacidad para un toque visual suave */
+  text-decoration: none; /* Mantener sin subrayado */
+}
+
+/* Efecto de subrayado animado */
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff; /* Subrayado blanco */
+  transition: width 0.3s ease; /* Efecto de animación en el subrayado */
+}
+
+.nav-links a:hover::before {
+  width: 100%; /* El subrayado aparece al hacer hover */
+}
+
+
+/* Estilos para el botón burger en pantallas pequeñas */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Animación para el burger cuando está activo */
+.burger.toggle .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.toggle .line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.toggle .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Estilos para el menú en pantallas pequeñas */
+.nav-links {
+  display: none; /* Ocultar el menú por defecto */
+  position: absolute;
+  top: 60px; /* Ajustar según el tamaño de tu barra de navegación */
+  right: 0;
+  width: 100%;
+  background-color: #0171e9; /* Color de fondo */
+  text-align: center;
+  z-index: 0;
+}
+
+.nav-links.active {
+  display: flex; /* Mostrar el menú cuando el burger es activado */
+}
+
+.nav-links a {
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  background-color: #0056b3; /* Color de fondo al hacer hover */
+}
+
+/* Estilos para pantallas grandes (PC) */
+@media (min-width: 769px) {
+  .navbar .nav-links {
+    display: flex; /* Mostrar los enlaces en fila */
+    justify-content: space-around;
+    width: auto;
+    position: static;
+    top: auto;
+    right: auto;
+  }
+
+  .burger {
+    display: none; /* Ocultar el botón burger en pantallas grandes */
+  }
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .burger {
+    display: block; /* Mostrar el botón burger */
+  }
+
+  .nav-links {
+    gap: 5px;
+    display: none; /* Ocultar el menú por defecto en pantallas pequeñas */
+  }
+
+  .nav-links.active {
+    flex-direction: column;
+    position: absolute;
+    top: 85px; /* Ajustar según la altura de tu navbar */
+    right: 35px;
+    width: 90%;
+    margin-right: 15px;
+    background: #0171e9;
+    text-align: center;
+    z-index: 0;
+  }
+
+  .nav-links a {
+    padding: 8px 10px; /* Reducimos el padding */
+    margin: 5px 0; /* Añadimos margen para separar visualmente los enlaces */
+    font-size: 16px; /* Reducimos el tamaño del texto si es necesario */
+    line-height: 1.2; /* Ajustamos la altura de línea */
+  }
+}
+.MoneyIcon{
+    width: 50px;
+    height: 50px;
+}
+.TextPrincipal {
+  text-align: center;
+  padding: 0 20px; /* Agrega un poco de padding para los dispositivos pequeños */
+}
+
+@media (max-width: 768px) {
+  .TextPrincipal {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 10px; /* Reduce el padding en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .TextPrincipal {
+    margin-top: 20px; /* Reduce el margen superior en pantallas muy pequeñas */
+    font-size: 16px; /* Reduce el tamaño de la fuente en pantallas muy pequeñas */
+  }
+}
+
+main {
+  flex: 1; /* El contenido principal tomará todo el espacio disponible */
+}
+
+footer {
+  background-color: #333; /* Fondo oscuro para el footer */
+  color: white; /* Color del texto blanco */
+  text-align: center; /* Centrar el texto */
+  padding: 20px 0; /* Espaciado alrededor del texto */
+  margin-block-start: auto;
+}
+
+footer .Text-Vixo {
+  font-size: 20px; /* Tamaño de la fuente */
+  font-weight: 500; /* Grosor de la fuente */
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* Efecto hover para el título */
+.Text-Vixo:hover {
+  color: #f4a261; /* Cambiar el color al pasar el ratón */
+  transition: color 0.4s ease;
+  cursor: pointer;
+}
+
+/* Responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+  footer {
+    padding: 15px 0; /* Reducir el padding en pantallas más pequeñas */
+  }
+
+  footer .Text-Vixo {
+    font-size: 18px; /* Reducir tamaño de texto en pantallas más pequeñas */
+  }
+}

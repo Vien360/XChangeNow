@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XChangeNow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img class="MoneyIcon" src="money-bag (1).png" alt="Money Icon">
+        <a href="index.html">XChangeNow</a>
+      </div>
+      <ul class="nav-links">
+        <li><a class="index" href="index.html">Home</a></li>
+        <li><a class="about" href="About.html">About</a></li>
+        <li><a class="contact" href="Contact.html">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>    
+    </nav>
+  </header>
+  <div class="container">
+    <select id="language-selector">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+    <h1 class="language-title">Conversor de Monedas💰</h1>
+    <form id="currency-form">
+      <label for="amount">Cantidad:</label>
+      <input class="language-input" min="0" type="number" id="amount" placeholder="Ej: 100" required step="0.01">
+      <label for="from-currency">De:</label>
+      <select id="from-currency">
+        <option value="EUR">EUR</option>
+        <option value="USD">USD</option>
+        <option value="MXN">MXN</option>
+        <option value="CLP">CLP</option>
+        <option value="ARS">ARS</option>
+        <option value="GBP">GBP</option>
+        <option value="JPY">JPY</option>
+        <option value="CAD">CAD</option>
+        <option value="AUD">AUD</option>
+        <option value="INR">INR</option>
+        <option value="BRL">BRL</option>
+        <option value="CNY">CNY</option>
+        <option value="ZAR">ZAR</option>
+        <option value="RUB">RUB</option>
+        <option value="KRW">KRW</option>
+      </select>
+      <img id="flag-from" src="" alt="Flag" style="width: 40px; height: auto; margin-left: 10px;">
+
+      <label for="to-currency">A:</label>
+      <select id="to-currency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="MXN">MXN</option>
+        <option value="CLP">CLP</option>
+        <option value="ARS">ARS</option>
+        <option value="GBP">GBP</option>
+        <option value="JPY">JPY</option>
+        <option value="CAD">CAD</option>
+        <option value="AUD">AUD</option>
+        <option value="INR">INR</option>
+        <option value="BRL">BRL</option>
+        <option value="CNY">CNY</option>
+        <option value="ZAR">ZAR</option>
+        <option value="RUB">RUB</option>
+        <option value="KRW">KRW</option>
+      </select>
+      <img id="flag-to" src="" alt="Flag" style="width: 40px; height: auto; margin-left: 10px;">
+      <button type="submit">Convertir</button>
+    </form>
+    <h2 id="result"></h2>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

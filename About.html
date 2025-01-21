@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <title>AboutMe</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img class="MoneyIcon" src="money-bag (1).png" alt="Money Icon">
+        <a href="index.html">XChangeNow</a>
+      </div>
+      <ul class="nav-links">
+        <li><a class="index" href="index.html">Home</a></li>
+        <li><a class="about" href="About.html">About</a></li>
+        <li><a class="contact" href="Contact.html">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>    
+    </nav>
+  </header>   
+    <div class="container">
+      <h2 class="TextPrincipal">
+          Welcome to XChangeNow💵 - Your Quick and Secure Solution to verify the value of Coins 💰
+          At XChangeNow💵, we offer you an easy✅, fast and reliable currency exchange service. Whether you need to see the value of currencies for a trip, manage your finances in various currencies, we are here to make the process simple and secure.
+      </h2>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const burger = document.querySelector(".burger");
+          const navLinks = document.querySelector(".nav-links");
+
+          burger.addEventListener("click", () => {
+            // Alternar la clase 'active' para mostrar/ocultar los enlaces
+            navLinks.classList.toggle("active");
+
+            // Animar las líneas del menú burger
+            burger.classList.toggle("toggle");
+          });
+        });
+    </script>
+    <footer>
+      <div>
+        <h1 class="Text-Vixo">
+          Page created by VixoZx®
+        </h1>
+      </div>
+    </footer>
+</body>
+</html>

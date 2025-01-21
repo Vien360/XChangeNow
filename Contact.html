@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Contact</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img class="MoneyIcon" src="money-bag (1).png" alt="Money Icon">
+        <a href="index.html">XChangeNow</a>
+      </div>
+      <ul class="nav-links">
+        <li><a class="index" href="index.html">Home</a></li>
+        <li><a class="about" href="About.html">About</a></li>
+        <li><a class="contact" href="Contact.html">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>    
+    </nav>
+  </header>
+    <div class="container">
+        <h1>My Social Networks</h1>
+        <div class="LogosDiv">
+            <img class="Github" src="github-logo.png" onclick="window.location.href='https://github.com/vien360';">
+            <img class="Instagram" src="instagram.png" onclick="window.location.href='https://instagram.com/snail.byte';">
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const burger = document.querySelector(".burger");
+          const navLinks = document.querySelector(".nav-links");
+
+          burger.addEventListener("click", () => {
+            // Alternar la clase 'active' para mostrar/ocultar los enlaces
+            navLinks.classList.toggle("active");
+
+            // Animar las líneas del menú burger
+            burger.classList.toggle("toggle");
+          });
+        });
+    </script>
+</body>
+</html>
